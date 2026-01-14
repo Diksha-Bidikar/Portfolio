@@ -31,13 +31,13 @@ const Hero = () => {
 
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image with Fade */}
+      {/* Background Image with Fade - Laptop/Keyboard */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070)',
-            opacity: 0.08
+            backgroundImage: 'url(https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=2065)',
+            opacity: 0.12
           }}
         ></div>
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50"></div>
