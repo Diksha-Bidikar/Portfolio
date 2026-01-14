@@ -1,110 +1,63 @@
 import React from 'react';
-import { Mail, Phone, Linkedin, MapPin, Download } from 'lucide-react';
+import { Mail, Linkedin, Github } from 'lucide-react';
 import { personalInfo } from '../data/mock';
-import { Button } from './ui/button';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import '../animations.css';
 
 const Contact = () => {
-  const [ref, isVisible] = useScrollAnimation(0.1);
-  const [ref2, isVisible2] = useScrollAnimation(0.1);
-
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-blue-50 via-white to-teal-50 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-300 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float-slow"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto">
-          <div ref={ref} className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">Get In Touch</h2>
-            <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+    <section id="contact" className="py-20 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900 mb-6">
+            Get In Touch!
+          </h2>
+          
+          <div className="border-t-2 border-gray-300 w-24 mx-auto mb-12"></div>
+
+          <p className="text-lg text-gray-700 mb-12 leading-relaxed">
+            I'm a Data Science graduate from Rice University and actively seeking opportunities 
+            in data science, machine learning, and AI. Feel free to reach out!
+          </p>
+
+          <div className="flex justify-center gap-8 mb-12">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="flex flex-col items-center group"
+            >
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-gray-900 transition-all duration-300">
+                <Mail className="text-gray-700 group-hover:text-white transition-colors" size={28} />
+              </div>
+              <span className="text-sm text-gray-600 group-hover:text-gray-900">Email</span>
+            </a>
+
+            <a
+              href={personalInfo.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center group"
+            >
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-gray-900 transition-all duration-300">
+                <Linkedin className="text-gray-700 group-hover:text-white transition-colors" size={28} />
+              </div>
+              <span className="text-sm text-gray-600 group-hover:text-gray-900">LinkedIn</span>
+            </a>
+
+            <a
+              href={`tel:${personalInfo.phone}`}
+              className="flex flex-col items-center group"
+            >
+              <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mb-3 group-hover:bg-gray-900 transition-all duration-300">
+                <svg className="w-7 h-7 text-gray-700 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <span className="text-sm text-gray-600 group-hover:text-gray-900">Phone</span>
+            </a>
           </div>
 
-          <div className={`bg-white rounded-lg shadow-2xl p-8 md:p-12 ${isVisible ? 'animate-scale-in stagger-2' : 'opacity-0'}`}>
-            <p className="text-lg text-gray-700 text-center mb-10">
-              I'm a Data Science graduate from Rice University and actively seeking opportunities 
-              in data science, machine learning, and AI. Feel free to reach out if you'd like to connect or discuss potential collaborations!
-            </p>
-
-            <div ref={ref2} className="grid md:grid-cols-2 gap-6 mb-10">
-              {/* Email */}
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className={`flex items-center gap-4 p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg hover:shadow-xl transition-all border border-gray-200 hover-lift group ${
-                  isVisible2 ? 'animate-fade-in-up stagger-1' : 'opacity-0'
-                }`}
-              >
-                <div className="bg-blue-600 p-3 rounded-full group-hover:scale-110 transition-transform">
-                  <Mail className="text-white" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-medium">Email</p>
-                  <p className="text-gray-900 font-semibold">{personalInfo.email}</p>
-                </div>
-              </a>
-
-              {/* Phone */}
-              <a
-                href={`tel:${personalInfo.phone}`}
-                className={`flex items-center gap-4 p-6 bg-gradient-to-br from-gray-50 to-teal-50 rounded-lg hover:shadow-xl transition-all border border-gray-200 hover-lift group ${
-                  isVisible2 ? 'animate-fade-in-up stagger-2' : 'opacity-0'
-                }`}
-              >
-                <div className="bg-teal-600 p-3 rounded-full group-hover:scale-110 transition-transform">
-                  <Phone className="text-white" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-medium">Phone</p>
-                  <p className="text-gray-900 font-semibold">{personalInfo.phone}</p>
-                </div>
-              </a>
-
-              {/* LinkedIn */}
-              <a
-                href={personalInfo.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-4 p-6 bg-gradient-to-br from-gray-50 to-blue-50 rounded-lg hover:shadow-xl transition-all border border-gray-200 hover-lift group ${
-                  isVisible2 ? 'animate-fade-in-up stagger-3' : 'opacity-0'
-                }`}
-              >
-                <div className="bg-blue-700 p-3 rounded-full group-hover:scale-110 transition-transform">
-                  <Linkedin className="text-white" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-medium">LinkedIn</p>
-                  <p className="text-gray-900 font-semibold">Connect with me</p>
-                </div>
-              </a>
-
-              {/* Location */}
-              <div
-                className={`flex items-center gap-4 p-6 bg-gradient-to-br from-gray-50 to-emerald-50 rounded-lg border border-gray-200 ${
-                  isVisible2 ? 'animate-fade-in-up stagger-4' : 'opacity-0'
-                }`}
-              >
-                <div className="bg-emerald-600 p-3 rounded-full">
-                  <MapPin className="text-white" size={24} />
-                </div>
-                <div>
-                  <p className="text-sm text-gray-600 font-medium">Location</p>
-                  <p className="text-gray-900 font-semibold">{personalInfo.location}</p>
-                </div>
-              </div>
-            </div>
-
-            {/* Download Resume Button */}
-            <div className="text-center pt-4">
-              <Button
-                onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-base hover-lift shine-effect"
-              >
-                <Download className="mr-2" size={20} />
-                Download My Resume
-              </Button>
-            </div>
+          <div className="text-gray-600">
+            <p className="mb-2"><strong>Email:</strong> {personalInfo.email}</p>
+            <p className="mb-2"><strong>Phone:</strong> {personalInfo.phone}</p>
+            <p><strong>Location:</strong> {personalInfo.location}</p>
           </div>
         </div>
       </div>
