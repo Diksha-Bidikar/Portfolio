@@ -6,7 +6,9 @@ const Hero = () => {
   const [displayedText, setDisplayedText] = useState('');
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const words = ["Hi,", "I'm", "Diksha"];
+  
+  // Move words inside useMemo to prevent re-creation on every render
+  const words = React.useMemo(() => ["Hi,", "I'm", "Diksha"], []);
 
   useEffect(() => {
     if (wordIndex < words.length) {
