@@ -1,8 +1,13 @@
 import React from 'react';
 import { Award, Target, TrendingUp } from 'lucide-react';
 import { personalInfo } from '../data/mock';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import '../animations.css';
 
 const About = () => {
+  const [ref, isVisible] = useScrollAnimation(0.1);
+  const [ref2, isVisible2] = useScrollAnimation(0.1);
+
   const highlights = [
     {
       icon: <Award className="text-blue-600" size={28} />,
@@ -22,13 +27,18 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="about" className="py-20 bg-white relative overflow-hidden">
+      {/* Background Decoration */}
+      <div className="absolute -top-20 -left-20 w-80 h-80 bg-teal-100 rounded-full filter blur-3xl opacity-30 animate-float"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">About Me</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+          <div ref={ref} className={isVisible ? 'animate-fade-in-up' : 'opacity-0'}>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">About Me</h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-12"></div>
+          </div>
 
-          <div className="space-y-8">
+          <div className={`space-y-8 ${isVisible ? 'animate-fade-in-up stagger-2' : 'opacity-0'}`}>
             <p className="text-lg text-gray-700 leading-relaxed">
               {personalInfo.bio}
             </p>
@@ -47,13 +57,15 @@ const About = () => {
             </p>
 
             {/* Highlights Grid */}
-            <div className="grid md:grid-cols-3 gap-6 mt-12">
+            <div ref={ref2} className="grid md:grid-cols-3 gap-6 mt-12">
               {highlights.map((item, index) => (
                 <div
                   key={index}
-                  className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:shadow-lg hover:scale-105 transition-all"
+                  className={`bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-lg border border-gray-200 hover:shadow-xl hover-lift ${
+                    isVisible2 ? `animate-scale-in stagger-${index + 1}` : 'opacity-0'
+                  }`}
                 >
-                  <div className="mb-4">{item.icon}</div>
+                  <div className="mb-4 animate-bounce">{item.icon}</div>
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">{item.title}</h3>
                   <p className="text-gray-600">{item.description}</p>
                 </div>
