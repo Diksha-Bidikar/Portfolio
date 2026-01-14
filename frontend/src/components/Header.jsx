@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Download } from 'lucide-react';
 import Logo from './Logo';
+import { personalInfo } from '../data/mock';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -15,10 +17,9 @@ const Header = () => {
 
   const navItems = [
     { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Experience', href: '#experience' },
+    { name: 'Skills', href: '#skills' }
   ];
 
   const scrollToSection = (e, href) => {
@@ -34,21 +35,18 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-white shadow-md' 
-          : 'bg-white'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
+          : 'bg-white/80 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-3">
         <div className="flex items-center justify-between">
           <a
             href="#hero"
             onClick={(e) => scrollToSection(e, '#hero')}
-            className="flex items-center gap-3 group"
+            className="transition-transform hover:scale-110 duration-300"
           >
-            <div className="transition-transform group-hover:scale-110 duration-300">
-              <Logo size="default" />
-            </div>
-            <span className="text-xl font-bold text-gray-800 hidden sm:block">Diksha Bidikar</span>
+            <Logo size="default" />
           </a>
 
           {/* Desktop Navigation */}
@@ -58,11 +56,28 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-gray-700 hover:text-gray-900 transition-colors font-medium text-base"
+                className="text-gray-700 hover:text-purple-600 transition-colors font-medium relative group"
               >
                 {item.name}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>
               </a>
             ))}
+            
+            <button
+              onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
+              className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white px-5 py-2 rounded-lg font-medium flex items-center gap-2 transition-all hover:scale-105 shadow-md"
+            >
+              <Download size={16} />
+              Resume
+            </button>
+            
+            <a
+              href="#contact"
+              onClick={(e) => scrollToSection(e, '#contact')}
+              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
+            >
+              Contact
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -91,11 +106,25 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   onClick={(e) => scrollToSection(e, item.href)}
-                  className="px-4 py-2 text-gray-700 hover:bg-gray-100 rounded transition-colors font-medium"
+                  className="px-4 py-2 text-gray-700 hover:bg-purple-50 rounded transition-colors font-medium"
                 >
                   {item.name}
                 </a>
               ))}
+              <button
+                onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 justify-center"
+              >
+                <Download size={16} />
+                Resume
+              </button>
+              <a
+                href="#contact"
+                onClick={(e) => scrollToSection(e, '#contact')}
+                className="px-4 py-2 text-gray-700 hover:bg-purple-50 rounded transition-colors font-medium"
+              >
+                Contact
+              </a>
             </div>
           </div>
         )}
