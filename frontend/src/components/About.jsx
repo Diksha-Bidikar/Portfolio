@@ -16,8 +16,8 @@ const About = () => {
     },
     {
       icon: <TrendingUp className="text-emerald-600" size={28} />,
-      title: "Continuous Learner",
-      description: "Currently pursuing Master's in Data Science at Rice University (GPA: 3.7)"
+      title: "Rice University Graduate",
+      description: "Master's in Data Science from Rice University (GPA: 3.7)"
     }
   ];
 
