@@ -16,22 +16,20 @@ const ExperienceCard = ({ job, index }) => {
   return (
     <div
       ref={ref}
-      className={`relative ${
+      className={`relative flex gap-6 ${
         isVisible ? `animate-fade-in-up stagger-${Math.min(index + 1, 3)}` : 'opacity-0'
       }`}
     >
       {/* Timeline dot and line */}
-      <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex flex-col items-center">
+      <div className="flex flex-col items-center flex-shrink-0">
         <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${gradients[index % 3]} shadow-lg animate-pulse z-10`}></div>
         {index < workExperience.length - 1 && (
-          <div className="w-0.5 h-full bg-gradient-to-b from-purple-300 to-pink-300 mt-2"></div>
+          <div className="w-0.5 flex-grow bg-gradient-to-b from-purple-300 to-pink-300 mt-2"></div>
         )}
       </div>
 
-      {/* Content Card - Alternating sides on desktop */}
-      <div className={`ml-8 md:ml-0 md:w-5/12 ${
-        index % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'
-      }`}>
+      {/* Content Card */}
+      <div className="flex-grow pb-12">
         <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-purple-300 group transform hover:-translate-y-2">
           {/* Company Icon */}
           <div className={`inline-flex items-center justify-center w-12 h-12 rounded-full bg-gradient-to-r ${gradients[index % 3]} mb-4 group-hover:scale-110 transition-transform`}>
