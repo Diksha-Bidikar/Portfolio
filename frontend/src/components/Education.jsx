@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { education } from '../data/mock';
-import { Calendar, MapPin, Award, GraduationCap, BookOpen } from 'lucide-react';
+import { Calendar, MapPin, Award, GraduationCap } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import '../animations.css';
 
