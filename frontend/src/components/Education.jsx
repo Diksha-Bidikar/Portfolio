@@ -27,55 +27,18 @@ const EducationCard = ({ edu, index }) => {
   return (
     <div
       ref={ref}
-      className={`bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-purple-300 group transform hover:-translate-y-2 ${
+      className={`bg-white rounded-xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 border-gray-100 hover:border-purple-300 group transform hover:-translate-y-2 ${
         isVisible ? `animate-scale-in stagger-${index + 1}` : 'opacity-0'
       }`}
     >
-      <div className="grid md:grid-cols-3 gap-6">
-        {/* Left - Visual/Icon Section */}
-        <div className={`bg-gradient-to-br ${gradients[index % 2]} p-8 flex flex-col items-center justify-center text-white relative overflow-hidden`}>
-          <div className="absolute inset-0 opacity-10">
-            <BookOpen className="absolute top-4 right-4 transform rotate-12" size={60} />
-            <BookOpen className="absolute bottom-4 left-4 transform -rotate-12" size={40} />
-          </div>
-          
-          <GraduationCap className="mb-4 animate-bounce" size={64} />
-          
-          {edu.gpa && (
-            <div className="relative mt-6">
-              {/* Circular GPA Display */}
-              <svg className="transform -rotate-90 w-24 h-24">
-                <circle
-                  cx="48"
-                  cy="48"
-                  r="40"
-                  stroke="rgba(255,255,255,0.3)"
-                  strokeWidth="8"
-                  fill="none"
-                />
-                <circle
-                  cx="48"
-                  cy="48"
-                  r="40"
-                  stroke="white"
-                  strokeWidth="8"
-                  fill="none"
-                  strokeDasharray={`${2 * Math.PI * 40}`}
-                  strokeDashoffset={`${2 * Math.PI * 40 * (1 - gpaProgress / 100)}`}
-                  className="transition-all duration-1000 ease-out"
-                  strokeLinecap="round"
-                />
-              </svg>
-              <div className="absolute inset-0 flex flex-col items-center justify-center">
-                <span className="text-2xl font-bold">{edu.gpa}</span>
-                <span className="text-xs">GPA</span>
-              </div>
-            </div>
-          )}
+      <div className="flex items-start gap-6">
+        {/* Icon */}
+        <div className={`flex-shrink-0 w-16 h-16 rounded-full bg-gradient-to-br ${gradients[index % 2]} flex items-center justify-center group-hover:scale-110 transition-transform`}>
+          <GraduationCap className="text-white" size={32} />
         </div>
 
-        {/* Right - Content Section */}
-        <div className="md:col-span-2 p-6">
+        {/* Content */}
+        <div className="flex-grow">
           <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
             {edu.degree}
           </h3>
@@ -83,7 +46,7 @@ const EducationCard = ({ edu, index }) => {
             {edu.institution}
           </p>
           
-          <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-4">
+          <div className="flex flex-wrap gap-3 text-sm text-gray-600 mb-4">
             <span className="flex items-center gap-1.5 bg-gray-50 px-3 py-1.5 rounded-full">
               <Calendar size={16} className="text-purple-500" />
               {edu.period}
