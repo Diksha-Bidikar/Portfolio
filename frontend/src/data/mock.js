@@ -8,7 +8,7 @@ export const personalInfo = {
   phone: "+1 (832) 837-0310",
   linkedin: "https://www.linkedin.com/in/diksha-bidikar/",
   resumeUrl: "https://customer-assets.emergentagent.com/job_6949bfdb-4a39-4643-918d-e30ce20a5735/artifacts/vfqj2plj_Diksha_Bidikar__Resume.pdf",
-  bio: "Data Science graduate student at Rice University with 3+ years of experience in machine learning, deep learning, and full-stack development. Passionate about solving real-world problems through data-driven approaches, particularly in healthcare and environmental safety.",
+  bio: "Data Science graduate from Rice University with 3+ years of experience in machine learning, deep learning, and full-stack development. Passionate about solving real-world problems through data-driven approaches, particularly in healthcare and environmental safety.",
   tagline: "Transforming Data into Actionable Insights"
 };
 
