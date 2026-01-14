@@ -18,7 +18,7 @@ export const education = [
     degree: "Master of Science in Data Science",
     institution: "Rice University",
     location: "Houston, TX",
-    period: "Expected May 2025",
+    period: "Graduated May 2025",
     gpa: "3.7",
     description: "Advanced coursework in machine learning, deep learning, statistical analysis, and big data technologies."
   },
