@@ -93,8 +93,8 @@ const Experience = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto relative">
-          <div className="space-y-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-0">
             {workExperience.map((job, index) => (
               <ExperienceCard key={job.id} job={job} index={index} />
             ))}
