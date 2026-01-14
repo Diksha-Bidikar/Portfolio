@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { skills } from '../data/mock';
 import { Code2, Database, Globe, BarChart3, Cloud, Wrench } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -6,16 +6,6 @@ import '../animations.css';
 
 const SkillCard = ({ category, index }) => {
   const [ref, isVisible] = useScrollAnimation(0.1);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setProgress(85 + Math.random() * 15);
-      }, index * 100);
-      return () => clearTimeout(timer);
-    }
-  }, [isVisible, index]);
 
   const iconColors = [
     'text-indigo-600',
@@ -26,17 +16,6 @@ const SkillCard = ({ category, index }) => {
     'text-cyan-600',
     'text-emerald-600',
     'text-gray-600'
-  ];
-
-  const bgGradients = [
-    'from-indigo-500 via-purple-500 to-indigo-600',
-    'from-purple-500 via-pink-500 to-purple-600',
-    'from-pink-500 via-rose-500 to-pink-600',
-    'from-rose-500 via-red-500 to-rose-600',
-    'from-red-500 via-orange-500 to-red-600',
-    'from-cyan-500 via-blue-500 to-cyan-600',
-    'from-emerald-500 via-teal-500 to-emerald-600',
-    'from-gray-600 via-slate-600 to-gray-700'
   ];
 
   return (
@@ -51,22 +30,6 @@ const SkillCard = ({ category, index }) => {
           {category.icon}
         </div>
         <h3 className="text-lg font-bold text-gray-900">{category.category}</h3>
-      </div>
-      
-      {/* Animated Progress Bar */}
-      <div className="mb-4">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-xs text-gray-600 font-medium">Proficiency</span>
-          <span className="text-xs font-bold text-purple-600">{Math.round(progress)}%</span>
-        </div>
-        <div className="w-full h-3 bg-gray-200 rounded-full overflow-hidden">
-          <div 
-            className={`h-full bg-gradient-to-r ${bgGradients[index % 8]} rounded-full transition-all duration-1000 ease-out relative overflow-hidden`}
-            style={{ width: `${progress}%` }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
-          </div>
-        </div>
       </div>
 
       {/* Skills Tags */}

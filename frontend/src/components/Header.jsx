@@ -19,7 +19,8 @@ const Header = () => {
     { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Skills', href: '#skills' }
+    { name: 'Skills', href: '#skills' },
+    { name: 'Contact', href: '#contact' }
   ];
 
   const scrollToSection = (e, href) => {
@@ -70,14 +71,6 @@ const Header = () => {
               <Download size={16} />
               Resume
             </button>
-            
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, '#contact')}
-              className="text-gray-700 hover:text-purple-600 transition-colors font-medium"
-            >
-              Contact
-            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,18 +106,11 @@ const Header = () => {
               ))}
               <button
                 onClick={() => window.open(personalInfo.resumeUrl, '_blank')}
-                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 justify-center"
+                className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-4 py-2 rounded-lg font-medium flex items-center gap-2 justify-center mt-2"
               >
                 <Download size={16} />
                 Resume
               </button>
-              <a
-                href="#contact"
-                onClick={(e) => scrollToSection(e, '#contact')}
-                className="px-4 py-2 text-gray-700 hover:bg-purple-50 rounded transition-colors font-medium"
-              >
-                Contact
-              </a>
             </div>
           </div>
         )}
