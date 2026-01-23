@@ -37,7 +37,7 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-white/80 backdrop-blur-sm'
+          : 'backdrop-blur-sm'
       }`}
     >
       <nav className="container mx-auto px-6 py-3">
@@ -57,7 +57,7 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => scrollToSection(e, item.href)}
-                className="text-gray-700 hover:text-purple-600 transition-colors font-medium relative group"
+                className="text-gray-700 hover:text-purple-600 transition-colors relative group font-bold"
               >
                 {item.name}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-600 to-purple-600 group-hover:w-full transition-all duration-300"></span>

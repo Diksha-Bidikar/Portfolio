@@ -30,7 +30,7 @@ const Contact = () => {
     {
       icon: <Github size={32} />,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/Diksha-Bidikar',
       color: 'from-gray-700 to-gray-900',
       external: true
     }

@@ -36,19 +36,23 @@ const Hero = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=2065)',
-            opacity: 0.12
+            backgroundImage: `url(${require("../img/bg_01.jpg")})`,
+            // backgroundImage: 'url(https://images.unsplash.com/photo-1587829741301-dc798b83add3?q=80&w=2065)',
+            // backgroundImage: `url(${require("../img/bg_02.jpg")})`,
+            // backgroundImage: `url(${require("../img/bg_03.jpg")})`,
+            opacity: 0.5
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50"></div>
+
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-70 via-purple-70 to-pink-70"></div>
       </div>
 
       {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
         <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-br from-pink-400 to-rose-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float-slow"></div>
         <div className="absolute -bottom-20 left-1/3 w-80 h-80 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-float"></div>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-6 relative z-10 text-center pt-20">
         <div className="max-w-4xl mx-auto space-y-6">

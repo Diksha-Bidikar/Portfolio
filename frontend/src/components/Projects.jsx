@@ -31,6 +31,7 @@ const ProjectCard = ({ project, index }) => {
           className={`w-full h-full object-cover transition-transform duration-700 ${
             isHovered ? 'scale-110' : 'scale-100'
           }`}
+          style ={{ opacity: 0.7 }}
         />
         <div className={`absolute inset-0 bg-gradient-to-br ${gradients[index % 3]} transition-opacity duration-300 ${
           isHovered ? 'opacity-80' : 'opacity-0'
@@ -40,8 +41,8 @@ const ProjectCard = ({ project, index }) => {
         <div className={`absolute inset-0 flex flex-col items-center justify-center p-6 transition-opacity duration-300 ${
           isHovered ? 'opacity-100' : 'opacity-0'
         }`}>
-          <TrendingUp className="text-white mb-3 animate-bounce" size={40} />
-          <p className="text-sm text-white uppercase tracking-wider font-bold mb-2">Machine Learning Project</p>
+          {/* <TrendingUp className="text-white mb-3 animate-bounce" size={40} /> */}
+          {/* <p className="text-sm text-white uppercase tracking-wider font-bold mb-2">Machine Learning Project</p> */}
           <h3 className="text-white text-xl font-bold text-center">{project.title}</h3>
         </div>
 
@@ -49,9 +50,9 @@ const ProjectCard = ({ project, index }) => {
         <div className={`absolute top-4 right-4 transition-all duration-300 ${
           isHovered ? 'opacity-0 translate-y-2' : 'opacity-100 translate-y-0'
         }`}>
-          <div className={`bg-gradient-to-r ${gradients[index % 3]} text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg`}>
+          {/* <div className={`bg-gradient-to-r ${gradients[index % 3]} text-white px-4 py-1.5 rounded-full text-sm font-bold shadow-lg`}>
             ML/AI
-          </div>
+          </div> */}
         </div>
       </div>
 
@@ -81,11 +82,11 @@ const ProjectCard = ({ project, index }) => {
         <div className="space-y-2 mt-auto">
           <div className="flex items-center gap-2 mb-2">
             <Award className="text-emerald-600" size={18} />
-            <span className="text-sm font-semibold text-gray-900">Key Achievements:</span>
+            <span className="text-sm font-semibold text-gray-900">Achievements:</span>
           </div>
-          {project.achievements.slice(0, 2).map((achievement, idx) => (
-            <p key={idx} className="text-xs text-gray-600 flex gap-2 group/item">
-              <span className="text-emerald-600 group-hover/item:scale-125 transition-transform">✓</span>
+          {project.achievements.slice(0, 3).map((achievement, idx) => (
+            <p key={idx} className="text-sm text-gray-600 flex gap-2 group/item custom-bullet-item ">
+              <span className="text-emerald-600 group-hover/item:scale-125 transition-transform "></span>
               {achievement}
             </p>
           ))}

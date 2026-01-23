@@ -75,7 +75,7 @@ const Experience = () => {
   const [ref, isVisible] = useScrollAnimation(0.1);
 
   return (
-    <section id="experience" className="py-20 bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 relative overflow-hidden">
+    <section id="experience" className=" bg-gradient-to-br from-purple-50 via-pink-50 to-indigo-50 relative overflow-hidden" style={{paddingTop: '5rem', paddingBottom: '2rem'}}>
       {/* Background decoration */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-200 to-pink-300 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
       <div className="absolute bottom-0 right-0 w-80 h-80 bg-gradient-to-br from-indigo-200 to-cyan-300 rounded-full filter blur-3xl opacity-20 animate-float"></div>

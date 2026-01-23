@@ -75,15 +75,16 @@ export const workExperience = [
 export const projects = [
   {
     id: 1,
-    title: "InstaText: Deep Learning for Text Extraction",
-    description: "Designed and implemented a deep learning pipeline leveraging Optical Character Recognition (OCR) and a transformer-based model (DONUT) for accurate text recognition from diverse image datasets.",
+    title: "InstaText: Deep Learning Pipeline for Text Extraction",
+    description: "Designed and implemented a deep learning pipeline leveraging Optical Character Recognition (OCR) and a transformer-based model (DONUT) for accurate text extraction from diverse image datasets.",
     technologies: ["Python", "PyTorch", "TensorFlow", "OCR", "DONUT", "CNN"],
     achievements: [
-      "Developed a CNN-based classifier to route images to the most effective models based on complexity",
+      "Developed a CNN-based classifier to route images to the most effective models based on image complexity",
       "Improved accuracy from 56% to 81%",
       "Enhanced document digitalization and accessibility for complex layouts"
     ],
-    image: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzY4NDA5MTg0fDA&ixlib=rb-4.1.0&q=85"
+    image: require("../img/ocr.jpg")
+    // image: "https://images.unsplash.com/photo-1591453089816-0fbb971b454c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwzfHxtYWNoaW5lJTIwbGVhcm5pbmd8ZW58MHx8fHwxNzY4NDA5MTg0fDA&ixlib=rb-4.1.0&q=85"
   },
   {
     id: 2,
@@ -91,11 +92,12 @@ export const projects = [
     description: "Applied Machine Learning Models (Logistic Regression, SVM, KNN, K-means, and DBSCAN) to identify faults and enhance the efficiency of centrifugal pumps.",
     technologies: ["Python", "Scikit-learn", "SVM", "KNN", "K-means", "DBSCAN"],
     achievements: [
-      "Optimized model accuracy from 61% to 80% through advanced hyperparameter tuning",
+      "Implemented real-time monitoring and prediction system",
+      "Optimized model accuracy from 61% to 80% through hyperparameter tuning",
       "Reduced breakdown risks, saving millions of dollars for the process industry",
-      "Implemented real-time monitoring and prediction system"
+      
     ],
-    image: "https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg"
+    image: require("../img/centrifugal_pump.jpg")
   },
   {
     id: 3,
@@ -103,23 +105,24 @@ export const projects = [
     description: "Built Machine Learning models to predict potable water using real-world datasets, enabling early identification of unsafe drinking water sources.",
     technologies: ["Python", "Random Forest", "Scikit-learn", "Pandas", "NumPy"],
     achievements: [
-      "Achieved 68% accuracy with Random Forest after cross-validation and tuning",
       "Enabled early identification of unsafe drinking water sources",
+      "Achieved 68% accuracy with Random Forest after cross-validation and tuning",
       "Supported scalable, data-driven approaches to public health and environmental safety"
     ],
-    image: "https://images.pexels.com/photos/35471391/pexels-photo-35471391.jpeg"
+    image: require("../img/potable-water-testing.webp")
+    // image: "https://images.pexels.com/photos/35471391/pexels-photo-35471391.jpeg"
   }
 ];
 
 export const skills = {
-  "Programming Languages": ["Python", "R", "SQL", "JavaScript"],
-  "Machine Learning & AI": ["Scikit-learn", "PyTorch", "TensorFlow", "OCR", "CNNs", "Transformer Models"],
-  "Web Development": ["React.js", "Node.js", "Express", "HTML5", "CSS3", "Bootstrap"],
+  "Programming Languages": ["Python", "R", "JavaScript"],
+  "Web Development": ["React.js", "Node.js", "Express", "HTML5", "CSS3", "Bootstrap", "jquery"],
   "Data Tools": ["NumPy", "Pandas", "PySpark", "Spark"],
   "Databases": ["MongoDB", "MySQL"],
   "Cloud & DevOps": ["AWS", "S3"],
   "Visualization": ["Tableau", "PowerBI", "Plotly", "Matplotlib"],
-  "Other Tools": ["Scrapy", "Swagger", "Git", "Excel"]
+  "Machine Learning & AI": ["Scikit-learn", "PyTorch", "TensorFlow", "OCR", "CNNs", "Transformer Models"],
+  "Other Tools": ["Scrapy", "Swagger", "Git", "Jupyter Notebooks", 'VS Code', 'Jira', "Microsoft Excel", "Microsoft PowerPoint", ]
 };
 
 export const achievements = [

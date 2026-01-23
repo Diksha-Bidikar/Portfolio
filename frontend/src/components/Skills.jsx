@@ -57,14 +57,9 @@ const Skills = () => {
       items: skills["Programming Languages"]
     },
     {
-      category: "Machine Learning & AI",
-      icon: <BarChart3 size={28} />,
-      items: skills["Machine Learning & AI"]
-    },
-    {
-      category: "Web Development",
-      icon: <Globe size={28} />,
-      items: skills["Web Development"]
+      category: "Databases",
+      icon: <Database size={28} />,
+      items: skills["Databases"]
     },
     {
       category: "Data Tools",
@@ -72,9 +67,16 @@ const Skills = () => {
       items: skills["Data Tools"]
     },
     {
-      category: "Databases",
-      icon: <Database size={28} />,
-      items: skills["Databases"]
+      category: "Web Development",
+      icon: <Globe size={28} />,
+      items: skills["Web Development"]
+    },
+
+
+    {
+      category: "Machine Learning & AI",
+      icon: <BarChart3 size={28} />,
+      items: skills["Machine Learning & AI"]
     },
     {
       category: "Cloud & DevOps",
@@ -86,6 +88,7 @@ const Skills = () => {
       icon: <BarChart3 size={28} />,
       items: skills["Visualization"]
     },
+
     {
       category: "Other Tools",
       icon: <Wrench size={28} />,

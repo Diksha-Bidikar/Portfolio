@@ -66,10 +66,10 @@ const About = () => {
   return (
     <section id="about" className="py-20 bg-white relative overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-indigo-200 to-purple-300 rounded-full filter blur-3xl opacity-20 animate-float"></div>
-      <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-gradient-to-br from-pink-200 to-rose-300 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div>
+      {/* <div className="absolute -top-20 -left-20 w-80 h-80 bg-gradient-to-br from-indigo-200 to-purple-300 rounded-full filter blur-3xl opacity-20 animate-float"></div> */}
+      {/* <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-gradient-to-br from-pink-200 to-rose-300 rounded-full filter blur-3xl opacity-20 animate-float-slow"></div> */}
       
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-[6.5rem] relative z-10">
         <div className="max-w-6xl mx-auto">
           <div ref={ref} className={`text-center mb-16 ${isVisible ? 'animate-fade-in-up' : 'opacity-0'}`}>
             <h2 className="text-5xl font-bold mb-4">
@@ -81,20 +81,10 @@ const About = () => {
           </div>
 
           <div className={`grid md:grid-cols-2 gap-12 items-center mb-16 ${isVisible ? 'animate-fade-in-up stagger-2' : 'opacity-0'}`}>
-            {/* Left - Image */}
-            <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-indigo-400 to-purple-600 rounded-2xl opacity-20 blur-2xl animate-pulse"></div>
-              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden p-4 border-4 border-white">
-                <img
-                  src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800"
-                  alt="Diksha Bidikar"
-                  className="w-full h-auto rounded-xl object-cover"
-                />
-              </div>
-            </div>
+
 
             {/* Right - Description */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               <p className="text-lg text-gray-700 leading-relaxed">
                 Data Science graduate from Rice University with 3+ years of experience in machine learning, 
                 deep learning, and full-stack development. Passionate about solving real-world problems through 
@@ -113,6 +103,18 @@ const About = () => {
                 models that save millions in operational costs, I thrive on turning complex data challenges 
                 into actionable insights.
               </p>
+            </div>
+
+                        {/* Left - Image */}
+            <div className="relative" style = {{display: "flex", justifyContent: "center"}}>
+              <div className="absolute inset-0 bg-gradient-to-br from-indigo-200 to-purple-400 rounded-2xl opacity-20 blur-2xl animate-pulse" ></div>
+              <div className="relative bg-white rounded-2xl shadow-2xl overflow-hidden p-2 border-white" style = {{width:"50%"}}>
+                <img
+                  src={require("../img/profile_pic_diksha.jpg")}
+                  alt="Diksha Bidikar"
+                  className="h-auto rounded-xl object-cover"
+                />
+              </div>
             </div>
           </div>
 

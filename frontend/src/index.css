@@ -125,3 +125,9 @@ code {
         border-bottom-color: inherit;
     }
 }
+
+.custom-bullet-item::before {
+  content: "•"; /* Unicode character for a bullet */
+  /* padding-right: 0.5em; Spacing between the bullet and the text */
+  color: #059669; /* Color of the bullet */
+}
