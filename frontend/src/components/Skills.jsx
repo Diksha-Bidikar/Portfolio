@@ -78,17 +78,17 @@ const Skills = () => {
       icon: <BarChart3 size={28} />,
       items: skills["Machine Learning & AI"]
     },
-    {
-      category: "Cloud & DevOps",
-      icon: <Cloud size={28} />,
-      items: skills["Cloud & DevOps"]
-    },
+
     {
       category: "Visualization",
       icon: <BarChart3 size={28} />,
       items: skills["Visualization"]
     },
-
+    {
+      category: "Cloud & DevOps",
+      icon: <Cloud size={28} />,
+      items: skills["Cloud & DevOps"]
+    },
     {
       category: "Other Tools",
       icon: <Wrench size={28} />,

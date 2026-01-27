@@ -77,7 +77,7 @@ export const projects = [
     id: 1,
     title: "InstaText: Deep Learning Pipeline for Text Extraction",
     description: "Designed and implemented a deep learning pipeline leveraging Optical Character Recognition (OCR) and a transformer-based model (DONUT) for accurate text extraction from diverse image datasets.",
-    technologies: ["Python", "PyTorch", "TensorFlow", "OCR", "DONUT", "CNN"],
+    technologies: ["Python", "Pandas", "TensorFlow", "Scikit-learn", "OCR", "DONUT", "CNN", "Matplotlib"],
     achievements: [
       "Developed a CNN-based classifier to route images to the most effective models based on image complexity",
       "Improved accuracy from 56% to 81%",
@@ -90,7 +90,8 @@ export const projects = [
     id: 2,
     title: "Fault Detection in Centrifugal Pumps",
     description: "Applied Machine Learning Models (Logistic Regression, SVM, KNN, K-means, and DBSCAN) to identify faults and enhance the efficiency of centrifugal pumps.",
-    technologies: ["Python", "Scikit-learn", "SVM", "KNN", "K-means", "DBSCAN"],
+    // technologies: ["Python", "Scikit-learn", "SVM", "KNN", "K-means", "DBSCAN"],
+    technologies: ["Python", "Pandas", "Numpy", "Scikit-learn", "Matplotlib", "Seaborn"],
     achievements: [
       "Implemented real-time monitoring and prediction system",
       "Optimized model accuracy from 61% to 80% through hyperparameter tuning",
@@ -103,7 +104,7 @@ export const projects = [
     id: 3,
     title: "Drinking Water Potability Prediction",
     description: "Built Machine Learning models to predict potable water using real-world datasets, enabling early identification of unsafe drinking water sources.",
-    technologies: ["Python", "Random Forest", "Scikit-learn", "Pandas", "NumPy"],
+    technologies: ["Python", "Scikit-learn", "Pandas", "NumPy"],
     achievements: [
       "Enabled early identification of unsafe drinking water sources",
       "Achieved 68% accuracy with Random Forest after cross-validation and tuning",

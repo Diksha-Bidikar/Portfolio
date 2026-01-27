@@ -68,7 +68,7 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Technologies */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.slice(0, 4).map((tech, idx) => (
+          {project.technologies.slice(0, 8).map((tech, idx) => (
             <span
               key={idx}
               className={`bg-gradient-to-r from-purple-50 to-pink-50 text-purple-700 px-3 py-1 rounded-full text-xs font-medium hover:scale-110 transition-all cursor-default border border-purple-200 shadow-sm`}
